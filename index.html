@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>道中道 · Dao Zhong Dao</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <style>
+        /* 基础重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;           /* 保证背景铺满，但不限制滚动 */
+            display: block;                /* 取消flex，恢复文档流 */
+            padding: 16px;
+        }
+
+        .card {
+            max-width: 900px;
+            margin: 0 auto;                /* 水平居中 */
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            padding: 40px 32px;
+        }
+
+        /* 标题区 */
+        .title-main {
+            font-size: 3.5rem;
+            font-weight: 350;
+            text-align: center;
+            letter-spacing: 2px;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+        .title-sub {
+            font-size: 1.2rem;
+            text-align: center;
+            color: #475569;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 24px;
+            margin-bottom: 24px;
+        }
+
+        /* 核心原文：四行大号 */
+        .core-verse {
+            font-size: 2.4rem;
+            font-weight: 330;
+            line-height: 1.5;
+            text-align: center;
+            color: #0f172a;
+            margin: 30px 0;
+        }
+        .core-verse p {
+            margin: 0.2em 0;
+        }
+
+        /* 双语信息区 */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            background: #f8fafc;
+            border-radius: 24px;
+            padding: 24px 20px;
+            margin: 24px 0;
+        }
+        .info-block {
+            font-size: 1rem;
+        }
+        .info-block p {
+            margin: 6px 0;
+        }
+        .info-block strong {
+            color: #334155;
+            font-weight: 600;
+        }
+
+        /* 哈希值区域 */
+        .hashes {
+            background: #f1f4f9;
+            border-radius: 24px;
+            padding: 24px 20px;
+            margin: 24px 0 20px;
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            font-size: 0.85rem;
+            word-break: break-word;
+        }
+        .hashes h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #1e293b;
+            margin-bottom: 16px;
+            font-family: system-ui, sans-serif;
+        }
+        .hash-item {
+            margin-bottom: 12px;
+            border-bottom: 1px dashed #cbd5e1;
+            padding-bottom: 8px;
+        }
+        .hash-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .hash-label {
+            display: inline-block;
+            min-width: 100px;
+            font-weight: 600;
+            color: #334155;
+        }
+        .hash-value {
+            color: #0f172a;
+        }
+
+        /* 道始流入口 */
+        .entry {
+            text-align: center;
+            margin: 32px 0 20px;
+        }
+        .entry a {
+            font-size: 1.3rem;
+            color: #2563eb;
+            text-decoration: none;
+            border-bottom: 2px dotted #94a3b8;
+            padding-bottom: 4px;
+        }
+        .entry a:hover {
+            border-bottom: 2px solid #2563eb;
+        }
+
+        /* 北京时间显示 */
+        .beijing-time {
+            text-align: center;
+            font-size: 0.95rem;
+            color: #64748b;
+            margin: 12px 0 8px;
+            padding-top: 12px;
+            border-top: 1px solid #e2e8f0;
+        }
+        .beijing-time span {
+            font-weight: 500;
+            color: #334155;
+        }
+
+        /* 底部声明 */
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-top: 8px;
+        }
+        .footer p {
+            margin: 3px 0;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            body { padding: 8px; }
+            .card { padding: 24px 16px; }
+            .title-main { font-size: 2.4rem; }
+            .core-verse { font-size: 1.8rem; margin: 20px 0; }
+            .info-grid { grid-template-columns: 1fr; gap: 16px; }
+            .hash-label { display: block; margin-bottom: 4px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <!-- 主标题 -->
+        <div class="title-main">道中道</div>
+        <div class="title-sub">Dao Zhong Dao</div>
+
+        <!-- 核心原文：四行分开，大气 -->
+        <div class="core-verse">
+            <p>道心同向</p>
+            <p>向道而生</p>
+            <p>生道有逆</p>
+            <p>逆道而流</p>
+        </div>
+
+        <!-- 中英文信息并列 -->
+        <div class="info-grid">
+            <div class="info-block">
+                <p><strong>原文：</strong> 道心同向 向道而生 生道有逆 逆道而流</p>
+                <p><strong>第一发现人：</strong> 陈有进</p>
+                <p><strong>原始证据：</strong> 手稿日期 2026.02.22</p>
+            </div>
+            <div class="info-block">
+                <p><strong>Original Text:</strong> Dao Xin Tong Xiang · Xiang Dao Er Sheng · Sheng Dao You Ni · Ni Dao Er Liu</p>
+                <p><strong>First Discoverer:</strong> Chen Youjin</p>
+                <p><strong>Original Evidence:</strong> Manuscript dated 2026.02.22</p>
+            </div>
+        </div>
+
+        <!-- 区块链存证（清晰区块） -->
+        <div class="hashes">
+            <h3>区块链存证 · Blockchain Hashes</h3>
+            <div class="hash-item">
+                <span class="hash-label">手稿哈希：</span>
+                <span class="hash-value">000351d87b2d6bd305f3cdc240ca2bca2091551e919d6e906409e68c06fb6795</span>
+            </div>
+            <div class="hash-item">
+                <span class="hash-label">网页哈希：</span>
+                <span class="hash-value">CB512786C190BC17F08FC1C9007A6AC795B6A5229BFAD9BFD6CF46EEEEA44B31</span>
+            </div>
+            <div class="hash-item">
+                <span class="hash-label">规则声明哈希：</span>
+                <span class="hash-value">ED8E6F75768F49EABEAFD779F27E4978AE645BEA0B74120A4B7D6570C0FA331B</span>
+            </div>
+        </div>
+
+        <!-- 道始流入口 -->
+        <div class="entry">
+            <a href="http://daoshiliu.com" target="_blank" rel="noopener noreferrer">道始流 · daoshiliu.com</a>
+        </div>
+
+        <!-- 北京时间显示 -->
+        <div class="beijing-time" id="beijing-time"></div>
+
+        <!-- 底部永恒声明 -->
+        <div class="footer">
+            <p>陈有进 · 道中道 · 永恒守护准则</p>
+            <p>Chen Youjin · Dao Zhong Dao · Eternal Guardian Principle</p>
+        </div>
+    </div>
+
+    <!-- 北京时间动态显示脚本 -->
+    <script>
+        function updateBeijingTime() {
+            const now = new Date();
+            const beijingTime = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Shanghai' }));
+            const year = beijingTime.getFullYear();
+            const month = String(beijingTime.getMonth() + 1).padStart(2, '0');
+            const day = String(beijingTime.getDate()).padStart(2, '0');
+            const hours = String(beijingTime.getHours()).padStart(2, '0');
+            const minutes = String(beijingTime.getMinutes()).padStart(2, '0');
+            const seconds = String(beijingTime.getSeconds()).padStart(2, '0');
+            const timeString = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+            document.getElementById('beijing-time').innerHTML = `<span>北京时间：</span>${timeString}`;
+        }
+        updateBeijingTime();
+        setInterval(updateBeijingTime, 1000);
+    </script>
+
+    <!-- 永恒准则注释（仅出现在源码中） -->
+    <!-- 本页面不得添加任何商业链接、交互功能。道始流入口仅作生态指路，符合“无交互”原则。 -->
+</body>
+</html>
